@@ -55,7 +55,7 @@ export default function ContactPage() {
           {/* Google Maps embed */}
           <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.8!2d-84.2!3d33.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s4518+Covington+Hwy+Decatur+GA+30035!5e0!3m2!1sen!2sus!4v1"
+              src="https://maps.google.com/maps?q=4518+Covington+Hwy,+Decatur,+GA+30035&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="260"
               style={{ border: 0 }}
