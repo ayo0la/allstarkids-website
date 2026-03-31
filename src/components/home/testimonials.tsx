@@ -10,15 +10,22 @@ export default function Testimonials() {
   return (
     <section className="bg-[#f5f0e8] py-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-black text-[#0a1628] mb-2">What Parents Say</h2>
-          <p className="text-slate-500">Trusted by families across Decatur.</p>
+        <div className="mb-10">
+          <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#fbbf24] mb-1">
+            Family Voices
+          </p>
+          <p className="font-display italic text-xl text-slate-400 leading-snug">
+            Don&apos;t just take our word for it —
+          </p>
+          <h2 className="font-black text-3xl md:text-4xl text-[#0a1628] tracking-tight">
+            What Parents Say
+          </h2>
         </div>
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {testimonials.map((t) => (
               <div key={t.id} className="flex-[0_0_100%] min-w-0 px-4">
-                <div className="bg-white rounded-2xl p-8 shadow-sm text-center">
+                <div className="bg-white rounded-md p-8 shadow-sm text-center">
                   <div className="flex justify-center gap-1 mb-5">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} size={20} fill="#fbbf24" color="#fbbf24" />
