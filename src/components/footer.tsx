@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-3 gap-10">
         {/* Col 1: Brand */}
         <div>
-          <div className="bg-white rounded-xl p-2 inline-block mb-4">
+          <div className="bg-white rounded-md p-2 inline-block mb-4">
             <Image src="/logo.webp" alt="All Star Kids Academy" width={56} height={40} className="object-contain" />
           </div>
           <p className="text-blue-200 text-sm leading-relaxed max-w-[200px]">

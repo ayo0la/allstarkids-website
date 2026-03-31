@@ -90,7 +90,7 @@ export default function ContactForm() {
       <Button
         type="submit"
         isLoading={status === "loading"}
-        className="w-full bg-[#0a1628] text-white font-bold py-3 rounded-xl"
+        className="w-full bg-[#0a1628] text-white font-bold py-3 rounded-md"
       >
         Send Message
       </Button>

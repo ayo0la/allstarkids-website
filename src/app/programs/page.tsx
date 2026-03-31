@@ -37,7 +37,7 @@ export default function ProgramsPage() {
         <p className="text-slate-500 mb-6">Enrollment takes about 10 minutes — start today.</p>
         <a
           href="/enroll"
-          className="btn-shimmer inline-block text-blue-950 font-black text-base px-8 py-3.5 rounded-xl shadow-md shadow-yellow-200 hover:scale-105 transition-transform"
+          className="bg-[#fbbf24] text-[#0a1628] hover:brightness-110 transition-[filter] inline-block font-black text-base px-8 py-3.5 rounded-md"
         >
           Enroll Now →
         </a>

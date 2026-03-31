@@ -39,7 +39,7 @@ export default function AboutPage() {
           </div>
           {/* Placeholder visual */}
           <div className="animate-fade-in-up delay-200 bg-[#e8f0fe] rounded-3xl aspect-video flex items-center justify-center">
-            <School size={64} strokeWidth={1.5} className="text-[#0a1628]/60 animate-float-slow" />
+            <School size={64} strokeWidth={1.5} className="text-[#0a1628]/60" />
           </div>
         </div>
       </section>
@@ -97,7 +97,7 @@ export default function AboutPage() {
         <p className="text-blue-200 mb-6">We'd love to show you around and answer your questions.</p>
         <Link
           href="/contact"
-          className="btn-shimmer inline-block text-blue-950 font-black text-base px-8 py-3.5 rounded-xl shadow-md shadow-yellow-200 hover:scale-105 transition-transform"
+          className="bg-[#fbbf24] text-[#0a1628] hover:brightness-110 transition-[filter] inline-block font-black text-base px-8 py-3.5 rounded-md"
         >
           Get in Touch →
         </Link>
