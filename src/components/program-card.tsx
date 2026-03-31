@@ -21,13 +21,14 @@ export default function ProgramCard({
 
   return (
     <Card
+      radius="sm"
       className="bg-white border-0 shadow-sm hover:-translate-y-1 transition-transform duration-200"
       style={{ borderTop: `4px solid ${accent}` }}
     >
       <CardBody className={compact ? "p-5" : "p-5 flex flex-col gap-3"}>
         {/* Icon badge */}
         <div
-          className="w-10 h-10 rounded-[10px] flex items-center justify-center mb-1"
+          className="w-10 h-10 rounded-md flex items-center justify-center mb-1"
           style={{ background: `${accent}18` }}
         >
           <Icon size={20} style={{ color: accent }} strokeWidth={2} />
