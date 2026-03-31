@@ -32,7 +32,10 @@ describe("Nav", () => {
 
   it("renders the Enroll Now CTA without shimmer animation", () => {
     render(<Nav />);
+    // Open the mobile menu to expose the mobile CTA as well
+    fireEvent.click(screen.getByLabelText("Toggle menu"));
     const ctas = screen.getAllByText("Enroll Now →");
+    expect(ctas).toHaveLength(2); // desktop + mobile
     ctas.forEach((cta) => {
       expect(cta.className).not.toContain("btn-shimmer");
     });
