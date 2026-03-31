@@ -29,4 +29,12 @@ describe("Nav", () => {
     fireEvent.click(toggle);
     expect(screen.queryByRole("navigation", { name: "Mobile menu" })).not.toBeInTheDocument();
   });
+
+  it("renders the Enroll Now CTA without shimmer animation", () => {
+    render(<Nav />);
+    const ctas = screen.getAllByText("Enroll Now →");
+    ctas.forEach((cta) => {
+      expect(cta.className).not.toContain("btn-shimmer");
+    });
+  });
 });

@@ -58,7 +58,7 @@ export default function Nav() {
           <NavbarItem className="hidden md:flex">
             <Link
               href="/enroll"
-              className="btn-shimmer text-blue-950 font-black text-sm px-5 py-2 rounded-xl shadow-md shadow-yellow-200 hover:scale-105 transition-transform"
+              className="bg-[#fbbf24] text-[#0a1628] font-black text-sm px-5 py-2 rounded-md hover:brightness-110 transition-[filter]"
             >
               Enroll Now →
             </Link>
@@ -95,7 +95,7 @@ export default function Nav() {
           <Link
             href="/enroll"
             onClick={() => setOpen(false)}
-            className="block mt-2 text-center btn-shimmer text-blue-950 font-black text-base px-5 py-3 rounded-xl"
+            className="block mt-2 text-center bg-[#fbbf24] text-[#0a1628] font-black text-base px-5 py-3 rounded-md hover:brightness-110 transition-[filter]"
           >
             Enroll Now →
           </Link>
