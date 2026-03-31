@@ -28,21 +28,27 @@ export default function WhyAska() {
   return (
     <section className="bg-[#0a1628] py-16 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-2">Why All Star Kids?</h2>
-          <p className="text-blue-300 max-w-lg mx-auto">
-            We don't just watch your children — we partner with you to help them grow.
+        <div className="mb-12">
+          <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#fbbf24] mb-1">
+            Why Families Choose Us
           </p>
+          <p className="font-display italic text-xl text-white/50 leading-snug">
+            More than childcare —
+          </p>
+          <h2 className="font-black text-3xl md:text-4xl text-white tracking-tight">
+            A Partnership for Growth
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pillars.map(({ Icon, accent, title, body }, i) => (
             <Card
               key={title}
+              radius="sm"
               className={`bg-white/5 border border-white/10 hover:bg-white/10 transition-colors animate-fade-in-up delay-${(i + 1) * 100}`}
             >
               <CardBody className="p-7">
                 <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                  className="w-11 h-11 rounded-md flex items-center justify-center mb-4"
                   style={{ background: `${accent}20` }}
                 >
                   <Icon size={22} style={{ color: accent }} strokeWidth={2} />
