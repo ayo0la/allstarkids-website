@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Input, Textarea, Button } from "@heroui/react";
 import { CheckCircle } from "lucide-react";
 
-export default function ContactForm() {
+function ContactFormInner() {
   const searchParams = useSearchParams();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -102,5 +102,13 @@ export default function ContactForm() {
         Send Message
       </Button>
     </form>
+  );
+}
+
+export default function ContactForm() {
+  return (
+    <Suspense fallback={<div className="h-64 animate-pulse bg-slate-100 rounded-xl" />}>
+      <ContactFormInner />
+    </Suspense>
   );
 }
