@@ -6,6 +6,7 @@ export type Program = {
   schedule: string;
   iconName: string;
   accentColor: string;
+  image?: string;
 };
 
 export const programs: Program[] = [
@@ -18,6 +19,7 @@ export const programs: Program[] = [
     schedule: "Mon–Fri, Hours: TBD",
     iconName: "Baby",
     accentColor: "#f43f5e",
+    image: "/classrooms/infant-room.webp",
   },
   {
     id: "preschool",
@@ -28,6 +30,7 @@ export const programs: Program[] = [
     schedule: "Mon–Fri, Hours: TBD",
     iconName: "Palette",
     accentColor: "#f97316",
+    image: "/classrooms/busy-bees.webp",
   },
   {
     id: "pre-k",
@@ -38,6 +41,7 @@ export const programs: Program[] = [
     schedule: "Mon–Fri, Hours: TBD",
     iconName: "BookOpen",
     accentColor: "#6366f1",
+    image: "/classrooms/pre-k-room.webp",
   },
   {
     id: "after-school",
@@ -48,25 +52,28 @@ export const programs: Program[] = [
     schedule: "Mon–Fri, Hours: TBD",
     iconName: "School",
     accentColor: "#8b5cf6",
+    image: "/classrooms/school-age-room.webp",
   },
   {
     id: "summer-eaglets",
-    name: "Summer Camp Eaglets",
+    name: "Summer Camp — Eaglets",
     ages: "Ages 5–7",
     description:
       "A fun-filled summer of themed weeks, field trips, arts & crafts, sports, and STEM activities. Perfect for younger campers ready for adventure.",
     schedule: "Summer seasonal, Hours: TBD",
     iconName: "Bird",
     accentColor: "#eab308",
+    image: "/classrooms/bus.webp",
   },
   {
     id: "summer-eagles",
-    name: "Summer Camp Eagles",
+    name: "Summer Camp — Eagles",
     ages: "Ages 8–12",
     description:
       "Leadership, teamwork, and exploration for older campers. Includes tech projects, athletics, excursions, and community service activities.",
     schedule: "Summer seasonal, Hours: TBD",
     iconName: "Star",
     accentColor: "#22c55e",
+    image: "/classrooms/bus.webp",
   },
 ];

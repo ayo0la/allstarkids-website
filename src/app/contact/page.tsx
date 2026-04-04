@@ -1,5 +1,21 @@
 import ContactForm from "@/components/contact-form";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import FaqAccordion from "@/components/faq-accordion";
+import { MapPin, Phone, Mail, Clock, CalendarDays } from "lucide-react";
+
+const faqs = [
+  {
+    question: "What happens if a parent does not pick their child up on time?",
+    answer: "Our staff will reach out to the parent(s) and wait until their arrival.",
+  },
+  {
+    question: "How fast can I enroll my child into All Star Kids Academy?",
+    answer: "Immediately! Come into the center or fill out our enrollment form online and we will get things rolling.",
+  },
+  {
+    question: "Is there still room for my child to attend?",
+    answer: "Yes! We are accepting children for all age groups we offer right now!",
+  },
+];
 
 export const metadata = {
   title: "Contact | All Star Kids Academy",
@@ -93,6 +109,46 @@ export default function ContactPage() {
           <h2 className="text-2xl font-black text-[#0a1628] mb-6">Send a Message</h2>
           <ContactForm />
         </div>
+      </section>
+      {/* Online Appointments */}
+      <section className="bg-[#f5f0e8] py-14 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-blue-600 text-sm font-bold uppercase tracking-widest mb-2">Schedule a Visit</p>
+            <h2 className="text-3xl font-black text-[#0a1628] mb-4">Book a Facility Tour</h2>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              We'd love to show you around. Meet our teachers, see the classrooms, and ask all the questions you have — at no cost and no commitment.
+            </p>
+            <a
+              href="/contact?message=I%20would%20like%20to%20book%20a%20facility%20tour."
+              className="inline-flex items-center gap-2 bg-[#0a1628] text-white font-black text-sm px-6 py-3 rounded-md hover:brightness-110 transition-[filter]"
+            >
+              <CalendarDays size={16} />
+              Book a Tour
+            </a>
+          </div>
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Available</p>
+            <p className="text-lg font-extrabold text-[#0a1628] mb-1">Facility Tour</p>
+            <p className="text-sm text-slate-500 mb-4">1 hour &nbsp;·&nbsp; Free</p>
+            <ul className="text-sm text-slate-600 space-y-2">
+              <li>✓ Meet our staff and director</li>
+              <li>✓ See all classrooms</li>
+              <li>✓ Get your questions answered</li>
+              <li>✓ No obligation to enroll</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-6xl mx-auto px-6 py-14">
+        <h2 className="text-3xl font-black text-[#0a1628] mb-8">Frequently Asked Questions</h2>
+        <FaqAccordion items={faqs} />
+        <p className="text-sm text-slate-400 mt-6 text-center">
+          Can't find your answer?{" "}
+          <a href="/contact#contact-form" className="text-[#0a1628] font-bold hover:underline">Send us a message.</a>
+        </p>
       </section>
     </main>
   );

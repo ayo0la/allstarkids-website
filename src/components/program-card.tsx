@@ -3,6 +3,7 @@
 import { Card, CardBody } from "@heroui/react";
 import { Baby, Palette, BookOpen, School, Bird, Star, type LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Program } from "@/data/programs";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -22,9 +23,21 @@ export default function ProgramCard({
   return (
     <Card
       radius="sm"
-      className="bg-white border-0 shadow-sm hover:-translate-y-1 transition-transform duration-200"
+      className="bg-white border-0 shadow-sm hover:-translate-y-1 transition-transform duration-200 overflow-hidden"
       style={{ borderTop: `4px solid ${accent}` }}
     >
+      {/* Classroom image */}
+      {!compact && program.image && (
+        <div className="relative w-full h-48">
+          <Image
+            src={program.image}
+            alt={`${program.name} classroom`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      )}
       <CardBody className={compact ? "p-5" : "p-5 flex flex-col gap-3"}>
         {/* Icon badge */}
         <div

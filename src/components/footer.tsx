@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/about",    label: "About" },
   { href: "/gallery",  label: "Gallery" },
   { href: "/contact",  label: "Contact" },
+  { href: "/careers",  label: "Careers" },
   { href: "/enroll",   label: "Enroll" },
 ];
 
@@ -88,6 +89,28 @@ export default function Footer() {
               <a href="mailto:info@allstarkidsacademyga.com" className="hover:text-white transition-colors">info@allstarkidsacademyga.com</a>
             </li>
           </ul>
+        </div>
+      </div>
+      {/* Certification badges */}
+      <div className="border-t border-white/10 py-6 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-400 sm:mr-4">Certified &amp; Licensed</p>
+          <div className="flex items-center gap-6">
+            <Image
+              src="/quality-rated-badge.webp"
+              alt="Quality Rated Child Care"
+              width={80}
+              height={80}
+              className="object-contain"
+            />
+            <Image
+              src="/childcare-licensing-badge.webp"
+              alt="Child Care Licensing"
+              width={80}
+              height={80}
+              className="object-contain"
+            />
+          </div>
         </div>
       </div>
       <div className="border-t border-white/10 text-center text-xs text-blue-400 py-5">

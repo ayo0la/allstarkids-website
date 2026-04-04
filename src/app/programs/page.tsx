@@ -1,5 +1,6 @@
 import { programs } from "@/data/programs";
 import ProgramCard from "@/components/program-card";
+import Image from "next/image";
 
 export const metadata = {
   title: "Programs | All Star Kids Academy",
@@ -28,6 +29,33 @@ export default function ProgramsPage() {
               <ProgramCard program={p} />
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* All Classrooms Gallery */}
+      <section className="bg-[#f5f0e8] py-14 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-black text-[#0a1628] mb-2">Our Classrooms</h2>
+          <p className="text-slate-500 mb-8">Every room is designed with your child's growth and safety in mind.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { src: "/classrooms/infant-room.webp",      label: "Infant Room" },
+              { src: "/classrooms/toddlers-room.webp",    label: "Toddlers Room" },
+              { src: "/classrooms/explorers-room.webp",   label: "Explorers Room (2–2.5 yrs)" },
+              { src: "/classrooms/busy-bees.webp",        label: "Busy Bees (2.5–3 yrs)" },
+              { src: "/classrooms/gummy-bears.webp",      label: "Gummy Bears (3–5 yrs)" },
+              { src: "/classrooms/pre-k-room.webp",       label: "Pre-K Room" },
+              { src: "/classrooms/school-age-room.webp",  label: "School Age Room" },
+              { src: "/classrooms/bus.webp",              label: "Transportation" },
+            ].map(({ src, label }) => (
+              <div key={src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image src={src} alt={label} fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-3">
+                  <span className="text-white text-xs font-bold leading-tight">{label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

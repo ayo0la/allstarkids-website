@@ -1,11 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Input, Textarea, Button } from "@heroui/react";
 import { CheckCircle } from "lucide-react";
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  useEffect(() => {
+    const msg = searchParams.get("message");
+    if (msg) setForm((prev) => ({ ...prev, message: msg }));
+  }, [searchParams]);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
