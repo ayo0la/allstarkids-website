@@ -1,36 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-const categories = ["All", "Classrooms", "Outdoor", "Activities"] as const;
+const categories = ["All", "Classrooms", "Transportation"] as const;
 type Category = typeof categories[number];
 
 type GalleryItem = {
-  id: number;
-  category: Exclude<Category, "All">;
+  src: string;
   alt: string;
+  category: Exclude<Category, "All">;
 };
 
-// 12 placeholder slots — replace src with real image paths
 const items: GalleryItem[] = [
-  { id: 1,  category: "Classrooms",  alt: "Bright, welcoming classroom" },
-  { id: 2,  category: "Outdoor",     alt: "Children playing outside" },
-  { id: 3,  category: "Activities",  alt: "Art and crafts activity" },
-  { id: 4,  category: "Classrooms",  alt: "Reading corner" },
-  { id: 5,  category: "Outdoor",     alt: "Playground fun" },
-  { id: 6,  category: "Activities",  alt: "Science exploration" },
-  { id: 7,  category: "Classrooms",  alt: "Pre-K classroom" },
-  { id: 8,  category: "Outdoor",     alt: "Nature walk" },
-  { id: 9,  category: "Activities",  alt: "Music time" },
-  { id: 10, category: "Classrooms",  alt: "Infant room" },
-  { id: 11, category: "Activities",  alt: "STEM activity" },
-  { id: 12, category: "Outdoor",     alt: "Summer camp outdoors" },
+  { src: "/classrooms/infant-room.webp",     alt: "Infant Room",                        category: "Classrooms" },
+  { src: "/classrooms/toddlers-room.webp",   alt: "Toddlers Room",                      category: "Classrooms" },
+  { src: "/classrooms/explorers-room.webp",  alt: "Explorers Room (2–2.5 yrs)",         category: "Classrooms" },
+  { src: "/classrooms/busy-bees.webp",       alt: "Busy Bees Classroom (2.5–3 yrs)",    category: "Classrooms" },
+  { src: "/classrooms/gummy-bears.webp",     alt: "Gummy Bears Room (3–5 yrs)",         category: "Classrooms" },
+  { src: "/classrooms/pre-k-room.webp",      alt: "Pre-K Room (5+)",                    category: "Classrooms" },
+  { src: "/classrooms/school-age-room.webp", alt: "School Age Room (Afterschool)",      category: "Classrooms" },
+  { src: "/classrooms/bus.webp",             alt: "Transportation",                     category: "Transportation" },
 ];
 
-// When real photos are available, add a `src` field to each item and pass to Lightbox slides
-const slides = items.map((item) => ({ src: `/gallery/placeholder-${item.id}.jpg`, alt: item.alt }));
+const slides = items.map((item) => ({ src: item.src, alt: item.alt }));
 
 export default function GalleryPage() {
   const [active, setActive] = useState<Category>("All");
@@ -71,13 +66,21 @@ export default function GalleryPage() {
         <div className="columns-2 md:columns-3 gap-4 space-y-4">
           {filtered.map((item) => (
             <button
-              key={item.id}
+              key={item.src}
               onClick={() => setLightboxIndex(items.indexOf(item))}
               className="w-full block overflow-hidden rounded-xl group"
             >
-              {/* Placeholder: gray aspect-ratio box. Replace with <Image> when real photos arrive. */}
-              <div className="aspect-[4/3] bg-[#e8f0fe] flex items-center justify-center rounded-xl group-hover:brightness-90 transition">
-                <span className="text-slate-400 text-xs font-semibold">{item.alt}</span>
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                  <span className="text-white text-xs font-bold">{item.alt}</span>
+                </div>
               </div>
             </button>
           ))}
