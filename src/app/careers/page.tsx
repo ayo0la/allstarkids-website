@@ -67,7 +67,7 @@ export default function CareersPage() {
               </div>
               <p className="text-sm text-slate-600 leading-relaxed flex-1">{description}</p>
               <Link
-                href={`/contact?message=I%20would%20like%20to%20apply%20for%20the%20${encodeURIComponent(slug)}%20position.`}
+                href={`https://careers.allstarkidsacademyga.com/apply?role=${encodeURIComponent(title)}`}
                 className="inline-block text-center font-black text-sm px-6 py-3 rounded-md transition-[filter] hover:brightness-110"
                 style={{ background: accentColor, color: "#fff" }}
               >
