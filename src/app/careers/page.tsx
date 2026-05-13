@@ -67,7 +67,9 @@ export default function CareersPage() {
               </div>
               <p className="text-sm text-slate-600 leading-relaxed flex-1">{description}</p>
               <Link
-                href={`https://careers.allstarkidsacademyga.com/apply?role=${encodeURIComponent(title)}`}
+                href={`https://allstarkids-platform.vercel.app/careers/apply?role=${encodeURIComponent(title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block text-center font-black text-sm px-6 py-3 rounded-md transition-[filter] hover:brightness-110"
                 style={{ background: accentColor, color: "#fff" }}
               >
